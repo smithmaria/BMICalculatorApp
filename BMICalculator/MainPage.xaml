@@ -82,7 +82,7 @@
                 <Label HorizontalOptions="Center"
 			        FontSize="Body"
 			        FontAttributes="Bold"
-			        Text="{Binding Source={x:Reference SliderHeight},Path=Value,StringFormat='{0:F0}'}"
+			        Text="{Binding Source={x:Reference SliderWeight},Path=Value,StringFormat='{0:F0}'}"
 			        x:Name="LblWeight"/>
             </VerticalStackLayout>
         </Frame>
