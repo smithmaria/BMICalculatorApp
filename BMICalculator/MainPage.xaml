@@ -24,6 +24,10 @@
                        HorizontalOptions="Center"
                        FontSize="Body"/>
                 </VerticalStackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="TapMale"
+                                          Tapped="TapMale_Tapped"/>
+                </Frame.GestureRecognizers>
             </Frame>
 
             <Frame Grid.Row="0"
@@ -40,6 +44,10 @@
                        HorizontalOptions="Center"
                        FontSize="Body"/>
                 </VerticalStackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="TapFemale"
+                                          Tapped="TapFemale_Tapped"/>
+                </Frame.GestureRecognizers>
             </Frame>
         </Grid>
 
@@ -50,7 +58,6 @@
             <VerticalStackLayout>
                 <Label HorizontalOptions="Center"
                        FontSize="Body"
-                       FontAttributes="Bold"
                        Text="Height (inches)"/>
                 <Slider ThumbColor="DarkBlue"
 			        x:Name="SliderHeight"
@@ -59,7 +66,6 @@
 			        Value="50"/>
                 <Label HorizontalOptions="Center"
 			        FontSize="Body"
-			        FontAttributes="Bold"
 			        Text="{Binding Source={x:Reference SliderHeight},Path=Value,StringFormat='{0:F0}'}"
 			        x:Name="LblHeight"/>
             </VerticalStackLayout>
@@ -72,7 +78,6 @@
             <VerticalStackLayout>
                 <Label HorizontalOptions="Center"
                        FontSize="Body"
-                       FontAttributes="Bold"
                        Text="Weight (lbs)"/>
                 <Slider ThumbColor="DarkBlue"
 			        x:Name="SliderWeight"
@@ -81,14 +86,14 @@
 			        Value="90"/>
                 <Label HorizontalOptions="Center"
 			        FontSize="Body"
-			        FontAttributes="Bold"
 			        Text="{Binding Source={x:Reference SliderWeight},Path=Value,StringFormat='{0:F0}'}"
 			        x:Name="LblWeight"/>
             </VerticalStackLayout>
         </Frame>
-        <Button BackgroundColor="DarkBlue"
-                Text="Calculate BMI"
+        <Button Text="Calculate BMI"
                 x:Name="btnCalculate"
-                CornerRadius="10"/>
+                CornerRadius="10"
+                IsEnabled="False"
+                Clicked="btnCalculate_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
